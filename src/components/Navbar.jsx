@@ -11,15 +11,16 @@ function Navbar() {
       <NavContainer>
         <h2>Nav<span>bar</span></h2>
         <div className={`links ${clicked ? 'active' : ''}`}>
-          <a href="/">Inicio</a>
-          <a href="/">Nosotros</a>
-          <a href="/">Productos y Servicios</a>
-          <a href="/">Catalogo</a>
-          <a href="/">Contacto</a>
+          <a onClick={handleClick} href="/">Inicio</a>
+          <a onClick={handleClick} href="/">Nosotros</a>
+          <a onClick={handleClick} href="/">Productos y Servicios</a>
+          <a onClick={handleClick} href="/">Catalogo</a>
+          <a onClick={handleClick} href="/">Contacto</a>
         </div>
         <div className='burger'>
         <BurgerButtom clicked={clicked} handleClick={handleClick}/>
         </div>
+        <BgDiv className={`initial ${clicked ? 'active' : ''}`}></BgDiv>
       </NavContainer>
     </>
   )
@@ -50,11 +51,13 @@ a{
   position: absolute;
   top: -700px;
   left: -2000px;
+  right: 0;
   margin-left: auto;
   margin-rigth: auto;
   text-align: center;
+  transition: all .5s ease;
   a{
-    color: black;
+    color: white;
     font-size: 2rem;
     display: block;
   }
@@ -66,6 +69,7 @@ a{
       color: white;
       display: inline;
     }
+    display: block;
   }
 }
 .links.active{
@@ -79,7 +83,9 @@ a{
   right: 0;
   text-align: center;
   a{
-    color: black;
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: white;
   }
 }
 .burger{
@@ -88,3 +94,21 @@ a{
   }
 }
 `
+
+const BgDiv = styled.div` 
+border-radius: 0 0 80% 0;
+position: absolute;
+background-color: #222;
+top:-1000px;
+left: -1000px;
+z-index: -1;
+transition: all .6s ease;
+
+&.active{
+  border-radius: 0 0 80% 0;
+top:0;
+left: 0;
+height: 100%;
+width: 100%;
+}
+` 
