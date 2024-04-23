@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <>
       <NavContainer>
-        <h2>Meta<span>box</span></h2>
+        <h2>Nav<span>bar</span></h2>
         <div className={`links ${clicked ? 'active' : ''}`}>
           <a href="/">Inicio</a>
           <a href="/">Nosotros</a>
