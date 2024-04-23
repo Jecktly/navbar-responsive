@@ -11,11 +11,11 @@ function Navbar() {
       <NavContainer>
         <h2>Nav<span>bar</span></h2>
         <div className={`links ${clicked ? 'active' : ''}`}>
-          <a onClick={handleClick} href="/">Inicio</a>
-          <a onClick={handleClick} href="/">Nosotros</a>
-          <a onClick={handleClick} href="/">Productos y Servicios</a>
-          <a onClick={handleClick} href="/">Catalogo</a>
-          <a onClick={handleClick} href="/">Contacto</a>
+          <a onClick={handleClick} href="#h">Inicio</a>
+          <a onClick={handleClick} href="#h">Nosotros</a>
+          <a onClick={handleClick} href="#h">Productos y Servicios</a>
+          <a onClick={handleClick} href="#h">Catalogo</a>
+          <a onClick={handleClick} href="#h">Contacto</a>
         </div>
         <div className='burger'>
         <BurgerButtom clicked={clicked} handleClick={handleClick}/>
@@ -96,7 +96,6 @@ a{
 `
 
 const BgDiv = styled.div` 
-border-radius: 0 0 80% 0;
 position: absolute;
 background-color: #222;
 top:-1000px;
